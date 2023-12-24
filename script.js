@@ -3,9 +3,11 @@ const colorSelect = document.getElementById('colorSelect');
 
 removeButton.addEventListener('click', function() {
   const selectedOption = colorSelect.value;
-  const optionToRemove = colorSelect.querySelector(option[value="${selectedOption}"]);
+  const options= colorSelect.querySelector('option');
 
-  if (optionToRemove) {
-    colorSelect.removeChild(optionToRemove);
+  options.forEach(function(option){
+	  if(option.value===selectedOption){
+    option.remove();
   }
+  });
 });
