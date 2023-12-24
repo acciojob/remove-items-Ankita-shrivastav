@@ -2,8 +2,11 @@
 const colorSelect=document.getElementById('colorSelect');
 const removeButton=document.getElementById('removeButton');
 removeButton.addEventListener('click',function(){
-	const selectedOption=colorSelect.options[colorSelect.selectedIndex];
-	colorSelect.removeChild(selectedOption);
+	const selectedOption=colorSelect.value;
+	const optionToRemove=colorSelect.querySelector('option[value="${selectedOption}"]');
+	if(optionToRemove){
+		colorSelect.removeChild(optionToRemove);
+	}
 });
 
 
